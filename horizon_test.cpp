@@ -114,7 +114,7 @@ int main(int argc, char **argv)
     }
 
     osg::ref_ptr<osgGeo::Horizon3DNode> horizon3d = new osgGeo::Horizon3DNode();
-    horizon3d->setSize(osgGeo::Size(crlRange.number(), inlRange.number()));
+    horizon3d->setSize(osgGeo::Vec2i(crlRange.number(), inlRange.number()));
     horizon3d->setMaxDepth(undef);
     horizon3d->setDepthArray(depthValsPtr.get());
 
