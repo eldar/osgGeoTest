@@ -113,7 +113,13 @@ int main(int argc, char **argv)
             depthVals[i] /= 2.0;
     }
 
+    std::vector<osg::Vec2d> coords(3);
+    coords[0] = osg::Vec2d(0, 0);
+    coords[1] = osg::Vec2d(0, 1);
+    coords[2] = osg::Vec2d(1.4, 0);
+
     osg::ref_ptr<osgGeo::Horizon3DNode> horizon3d = new osgGeo::Horizon3DNode();
+    horizon3d->setCornerCoords(coords);
     horizon3d->setSize(osgGeo::Vec2i(crlRange.number(), inlRange.number()));
     horizon3d->setMaxDepth(undef);
     horizon3d->setDepthArray(depthValsPtr.get());
